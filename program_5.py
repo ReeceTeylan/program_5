@@ -8,3 +8,15 @@
 # If yes, repeat Step 1
 # If no, Display “Thank you!” and the program will exit 
 # Use Python Function and appropriate Exceptions to capture errors during runtime
+import tkinter as tk
+
+def calculate():
+
+    window = tk.Tk()
+    window.title("Calculator")
+
+    user_operation_frame = tk.Frame(window)
+    user_operation_frame.grid(row=0, column=0, padx=10, pady=10)
+
+    user_operation = tk.StringVar(window)
+    user_operation.set("Addition")
