@@ -42,3 +42,6 @@ def calculate():
 
     second_number_entry = tk.Entry(window, font=font.Font(family="Consolas",size=13), bg="darkseagreen", fg="white")
     second_number_entry.grid(row=4, column=0, padx=10, pady=10)
+
+    result_label = tk.Label(window, text="")
+    result_label.grid(row=5, column=0, padx=10, pady=10)
