@@ -10,6 +10,7 @@
 # Use Python Function and appropriate Exceptions to capture errors during runtime
 import tkinter as tk
 from tkinter import font
+from tkinter import messagebox
 
 def calculate():
     def perform_operation():
@@ -19,6 +20,16 @@ def calculate():
             second_number = float(second_number_entry.get())
             result = operation_func(first_number, second_number)
             result_label.config(text=f"The result is: {result}")
+        finally:
+            continue_or_stop()
+
+    def continue_or_stop():
+        if messagebox.askyesno("Continue", "Do you want to continue?"):
+            window.destroy()
+            calculate()
+        else:
+            messagebox.showinfo("Thank you", "Thank you for using the calculator.")
+            window.destroy()
 
     operations = {
         'Addition': ('+', lambda x, y: x + y),
