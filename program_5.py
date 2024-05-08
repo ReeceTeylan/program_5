@@ -12,6 +12,14 @@ import tkinter as tk
 from tkinter import font
 
 def calculate():
+    def perform_operation():
+        try:
+            operation_symbol, operation_func = operations[user_operation.get()]
+            first_number = float(first_number_entry.get())
+            second_number = float(second_number_entry.get())
+            result = operation_func(first_number, second_number)
+            result_label.config(text=f"The result is: {result}")
+
     operations = {
         'Addition': ('+', lambda x, y: x + y),
         'Subtraction': ('-', lambda x, y: x - y),
