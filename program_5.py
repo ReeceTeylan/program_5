@@ -11,6 +11,12 @@
 import tkinter as tk
 
 def calculate():
+    operations = {
+        'Addition': ('+', lambda x, y: x + y),
+        'Subtraction': ('-', lambda x, y: x - y),
+        'Multiplication': ('*', lambda x, y: x * y),
+        'Division': ('/', lambda x, y: x / y)
+    }
 
     window = tk.Tk()
     window.title("Calculator")
@@ -20,3 +26,6 @@ def calculate():
 
     user_operation = tk.StringVar(window)
     user_operation.set("Addition")
+
+    for operation in operations:
+        tk.Radiobutton(user_operation_frame, text=operation, variable=user_operation, value=operation).pack(side=tk.LEFT, padx=10, pady=10)
