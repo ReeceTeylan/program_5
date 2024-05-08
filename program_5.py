@@ -9,6 +9,7 @@
 # If no, Display “Thank you!” and the program will exit 
 # Use Python Function and appropriate Exceptions to capture errors during runtime
 import tkinter as tk
+from tkinter import font
 
 def calculate():
     operations = {
@@ -29,3 +30,15 @@ def calculate():
 
     for operation in operations:
         tk.Radiobutton(user_operation_frame, text=operation, variable=user_operation, value=operation).pack(side=tk.LEFT, padx=10, pady=10)
+
+    first_number_label = tk.Label(window, text="Enter the first number:", font=font.Font(family="Consolas",size=15), bg="seagreen", fg="white")
+    first_number_label.grid(row=1, column=0, padx=10, pady=10)
+
+    first_number_entry = tk.Entry(window, font=font.Font(family="Consolas",size=13), bg="darkseagreen", fg="white")
+    first_number_entry.grid(row=2, column=0, padx=10, pady=10)
+
+    second_number_label = tk.Label(window, text="Enter the second number:", font=font.Font(family="Consolas",size=15), bg="seagreen", fg="white")
+    second_number_label.grid(row=3, column=0, padx=10, pady=10)
+
+    second_number_entry = tk.Entry(window, font=font.Font(family="Consolas",size=13), bg="darkseagreen", fg="white")
+    second_number_entry.grid(row=4, column=0, padx=10, pady=10)
