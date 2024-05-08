@@ -64,3 +64,10 @@ def calculate():
 
     result_label = tk.Label(window, text="")
     result_label.grid(row=5, column=0, padx=10, pady=10)
+    
+    compute_button = tk.Button(window, text="Compute", command=perform_operation)
+    compute_button.grid(row=6, column=0, padx=10, pady=10)
+
+    window.mainloop()
+
+calculate()
