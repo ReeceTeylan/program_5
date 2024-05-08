@@ -20,6 +20,10 @@ def calculate():
             second_number = float(second_number_entry.get())
             result = operation_func(first_number, second_number)
             result_label.config(text=f"The result is: {result}")
+        except (ValueError, TypeError):
+            messagebox.showerror("Error", "Please enter a valid number!")
+        except ZeroDivisionError:
+            messagebox.showerror("Error", "You cannot divide by zero!")
         finally:
             continue_or_stop()
 
